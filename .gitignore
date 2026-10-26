@@ -1,0 +1,30 @@
+# Managed dependencies and local execution evidence
+.runtime/
+.archify/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+work/
+runs/
+.review-runs/
+outputs/
+*.inflight
+*.followup.lock
+
+# Credentials never belong in the public repository
+.env
+.env.*
+*.credential.xml
+*credential-setup-session*.json
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local tool/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
