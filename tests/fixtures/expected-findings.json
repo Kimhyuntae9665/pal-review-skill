@@ -1,0 +1,8 @@
+{
+  "fixture_only": true,
+  "expected_findings": [
+    {"issue": "total_value misses multiplication by quantity", "input": [[10, 2], [100, 1]], "expected": 40.0, "actual": 36.666666666666664},
+    {"issue": "zero total quantity divides by zero", "inputs": [[], [[10, 0]]], "expected": 0.0, "actual_exception": "ZeroDivisionError"}
+  ],
+  "assessment": "Read real findings and reproduce each claim. No real-model quality score exists until an authenticated response is received."
+}

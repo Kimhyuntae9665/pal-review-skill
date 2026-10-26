@@ -1,0 +1,10 @@
+# Direct runtime requirements. Exact transitive versions are constrained separately.
+# PAL itself is installed from the verified local checkout by scripts/bootstrap.py.
+mcp==1.30.0
+httpx>=0.28,<0.29
+openai>=3.37,<4
+google-genai>=2.33,<3
+pydantic>=2.14,<3
+python-dotenv>=1.2,<2
+setuptools>=80,<81
+wheel>=0.45,<0.46

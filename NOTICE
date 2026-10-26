@@ -1,0 +1,27 @@
+PAL Review Skill
+Copyright 2026 Kimhyuntae9665
+
+This repository contains an independent Codex skill and integration wrapper.
+It is not an official release of OpenAI, Google, Groq, NVIDIA, Cohere, or PAL.
+
+The runtime installer downloads PAL MCP Server from:
+https://github.com/BeehiveInnovations/pal-mcp-server
+Pinned revision: 7afc7c1cc96e23992c8f105f960132c657883bb1
+PAL MCP Server is licensed under the Apache License, Version 2.0.
+Its source, copyright notices, and license remain in the downloaded checkout;
+upstream source is not vendored in this repository.
+
+Model names are identifiers of their respective providers. Provider service
+terms and model licenses are separate from this wrapper's software license.
+Free-tier eligibility, data policies, capacity, and quotas may change.
+
+The documentation diagrams are original explanatory illustrations generated
+from this integration's behavior. They are not provider endorsements or
+evidence that any particular review is correct.
+
+The generated standalone HTML viewer includes MIT-licensed Archify components:
+https://github.com/tt-a1i/archify
+Copyright (c) 2026 tt-a1i (Archify)
+Copyright (c) 2025 Cocoon AI
+The corresponding permission notice is preserved at
+docs/diagrams/ARCHIFY-LICENSE.txt. Original SVG/PNG illustrations are separate.

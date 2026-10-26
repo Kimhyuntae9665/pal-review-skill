@@ -1,0 +1,18 @@
+{
+  "diagram_type": "workflow",
+  "source_revision": "ed185a0aa0038f20bc2918e48f760622e9a273c3",
+  "specification_sha256": "497af50a60abe58b4125b6b2c117982bc5bcb074884f0d6eec51ac2c592a9dd4",
+  "artifact_sha256": "e2bb229e8af5ddcc12b22ee049e1656d8ad8b9dd9d74b9ab5ea0755f9aa38b04",
+  "quality": "showcase",
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "visual_review": "passed",
+  "visual_scope": ["1440x900 light", "1440x900 dark", "2048x1320 light", "2048x1320 dark"],
+  "static_assets": "Original Korean SVGs and 2x PNG exports; both PNGs visually inspected.",
+  "limitations": "Diagram gates validate the artifact and source references; they do not prove provider availability or review correctness."
+}

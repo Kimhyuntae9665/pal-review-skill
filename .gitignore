@@ -1,5 +1,6 @@
 # Managed dependencies and local execution evidence
 .runtime/
+.runtime-*/
 .archify/
 __pycache__/
 *.py[cod]

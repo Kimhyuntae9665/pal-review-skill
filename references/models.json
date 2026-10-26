@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-25",
+  "pal_source": "../.runtime/pal-mcp-server",
+  "pal_python": "../.runtime/venv/{venv_python}",
+  "pal_commit": "7afc7c1cc96e23992c8f105f960132c657883bb1",
+  "limits": {
+    "max_input_bytes": 48000,
+    "max_file_bytes": 20000,
+    "max_output_tokens": 4096,
+    "timeout_seconds": 600
+  },
+  "profiles": {
+    "quality": [
+      {"id": "anthropic/claude-opus-5.5", "family": "anthropic", "label": "Claude Opus 5.5", "paid": true},
+      {"id": "google/gemini-4-argon", "family": "google", "label": "Gemini 4 Argon", "paid": true},
+      {"id": "anthropic/claude-sonnet-5.5", "family": "anthropic", "label": "Claude Sonnet 5.5", "paid": true}
+    ],
+    "free": [
+      {"id": "gemini-3.8-flash", "provider": "gemini", "key_env": "GEMINI_API_KEY", "family": "google", "label": "Gemini 3.8 Flash (Google Free Tier)", "paid": false},
+      {"id": "qwen/qwen3.8-27b", "provider": "groq", "key_env": "GROQ_API_KEY", "family": "qwen", "label": "Qwen3.8 27B (Groq Free Plan)", "paid": false},
+      {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "family": "nvidia", "label": "Nemotron 3 Ultra (OpenRouter free)", "paid": false},
+      {"id": "cohere/north-mini-code:free", "provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "family": "cohere", "label": "Cohere North Mini Code (OpenRouter free)", "paid": false}
+    ]
+  }
+}

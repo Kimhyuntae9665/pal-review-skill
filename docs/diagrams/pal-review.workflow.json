@@ -1,0 +1,249 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "PAL review: evidence before changes",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-pal-review-20261026-121500/pal-review.html",
+    "legend": {
+      "mode": "hidden"
+    },
+    "repository": {
+      "url": "https://github.com/Kimhyuntae9665/pal-review-skill.git",
+      "revision": "ed185a0aa0038f20bc2918e48f760622e9a273c3",
+      "provider": "github",
+      "link_mode": "web"
+    }
+  },
+  "lanes": [
+    {
+      "id": "prepare",
+      "label": "Prepare"
+    },
+    {
+      "id": "review",
+      "label": "Review"
+    },
+    {
+      "id": "codex",
+      "label": "Codex"
+    }
+  ],
+  "mainPath": [
+    "packet",
+    "gate",
+    "pal",
+    "reports",
+    "handoff",
+    "verify",
+    "improve"
+  ],
+  "nodes": [
+    {
+      "id": "packet",
+      "lane": "prepare",
+      "col": 0,
+      "type": "frontend",
+      "label": "Explicit inputs",
+      "sublabel": "Brief + chosen files",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/pal_review.py",
+          "line": 225,
+          "end_line": 236
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "lane": "prepare",
+      "col": 1,
+      "type": "security",
+      "label": "Preflight checks",
+      "sublabel": "Input + free route gates",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/pal_review.py",
+          "line": 179,
+          "end_line": 223
+        },
+        {
+          "path": "scripts/pal_review.py",
+          "line": 96,
+          "end_line": 135
+        }
+      ]
+    },
+    {
+      "id": "pal",
+      "lane": "prepare",
+      "col": 2,
+      "type": "backend",
+      "label": "Real PAL MCP",
+      "sublabel": "One inference POST / call",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/pal_server.py",
+          "line": 125,
+          "end_line": 144
+        },
+        {
+          "path": "scripts/pal_review.py",
+          "line": 295,
+          "end_line": 307
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "lane": "review",
+      "col": 2,
+      "type": "cloud",
+      "label": "Independent reviews",
+      "sublabel": "Round 1: up to four calls",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/review_rounds.py",
+          "line": 193,
+          "end_line": 197
+        }
+      ]
+    },
+    {
+      "id": "critique",
+      "lane": "review",
+      "col": 3,
+      "type": "cloud",
+      "label": "Peer critique",
+      "sublabel": "Only if 2+ successes",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/review_rounds.py",
+          "line": 198,
+          "end_line": 219
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "lane": "review",
+      "col": 4,
+      "type": "database",
+      "label": "Review handoff",
+      "sublabel": "Advice + source hashes",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/review_rounds.py",
+          "line": 115,
+          "end_line": 150
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "lane": "codex",
+      "col": 4,
+      "type": "security",
+      "label": "Verify evidence",
+      "sublabel": "Adopt / reject / unresolved",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/review_rounds.py",
+          "line": 128,
+          "end_line": 150
+        }
+      ]
+    },
+    {
+      "id": "improve",
+      "lane": "codex",
+      "col": 5,
+      "type": "backend",
+      "label": "Edit and check",
+      "sublabel": "Within the user scope",
+      "width": 150,
+      "sources": [
+        {
+          "path": "scripts/review_rounds.py",
+          "line": 143,
+          "end_line": 150
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "a",
+      "from": "packet",
+      "to": "gate"
+    },
+    {
+      "id": "b",
+      "from": "gate",
+      "to": "pal",
+      "label": "permitted"
+    },
+    {
+      "id": "c",
+      "from": "pal",
+      "to": "reports"
+    },
+    {
+      "id": "d",
+      "from": "reports",
+      "to": "critique",
+      "label": "debate",
+      "variant": "dashed",
+      "role": "branch"
+    },
+    {
+      "id": "e",
+      "from": "reports",
+      "to": "handoff",
+      "label": "review",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "route": "bottom-channel"
+    },
+    {
+      "id": "f",
+      "from": "critique",
+      "to": "handoff"
+    },
+    {
+      "id": "g",
+      "from": "handoff",
+      "to": "verify"
+    },
+    {
+      "id": "h",
+      "from": "verify",
+      "to": "improve"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Bounded rounds",
+      "items": [
+        "Review: at most four calls. Debate: at most eight total.",
+        "Round 2 keeps original evidence; only successful reviewers participate."
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Advisory boundary",
+      "items": [
+        "Reviewer models receive no execution tools. Agreement is not proof.",
+        "No automatic retry, paid fallback, or recursive correction loop."
+      ]
+    }
+  ]
+}

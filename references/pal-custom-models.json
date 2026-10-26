@@ -1,0 +1,26 @@
+{
+  "models": [
+    {
+      "model_name": "gemini-3.8-flash",
+      "aliases": [],
+      "context_window": 65536,
+      "max_output_tokens": 4096,
+      "supports_extended_thinking": false,
+      "supports_temperature": false,
+      "supports_images": false,
+      "allow_code_generation": false,
+      "supports_json_mode": false
+    },
+    {
+      "model_name": "qwen/qwen3.8-27b",
+      "aliases": [],
+      "context_window": 65536,
+      "max_output_tokens": 4096,
+      "supports_extended_thinking": false,
+      "supports_temperature": false,
+      "supports_images": false,
+      "allow_code_generation": false,
+      "supports_json_mode": false
+    }
+  ]
+}

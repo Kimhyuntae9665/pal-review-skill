@@ -1,0 +1,6 @@
+interface:
+  display_name: "무료 4모델 검토·토론·개선"
+  short_description: "Gemini·Qwen·Nemotron·Cohere 의견을 받아 Codex가 검증하고 개선"
+  default_prompt: "Use $pal-review to review this work with all four configured free models, debate their findings when requested, then verify the advice, fix supported issues, and check the improved result."
+policy:
+  allow_implicit_invocation: true
