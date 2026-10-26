@@ -23,7 +23,11 @@ def load_config(path=DEFAULT_CONFIG):
         if not isinstance(value, str) or not value.strip():
             raise ValueError("Runtime paths must be nonempty strings")
         value = value.replace("{venv_python}", "Scripts/python.exe" if os.name == "nt" else "bin/python")
-        config[name] = str((location.parent / Path(value)).resolve())
+        target = location.parent / Path(value)
+        # Resolving a venv's final executable symlink can select the base Python
+        # instead of the environment that owns its installed dependencies.
+        resolved = target.parent.resolve() / target.name if name == "pal_python" else target.resolve()
+        config[name] = str(resolved)
     config["_config_path"] = str(location)
     return config
 

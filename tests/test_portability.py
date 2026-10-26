@@ -19,6 +19,26 @@ from runtime_config import load_config
 
 
 class PortableConfigTests(unittest.TestCase):
+    def test_python_executable_symlink_keeps_virtual_environment_path(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder).resolve()
+            base = root / "base-python"
+            base.write_text("synthetic executable target")
+            executable = root / "venv" / "bin" / "python"
+            executable.parent.mkdir(parents=True)
+            try:
+                executable.symlink_to(base)
+            except OSError:
+                self.skipTest("Executable symlinks require platform permission.")
+            value = json.loads((ROOT / "references" / "models.json").read_text())
+            value["pal_source"] = "source"
+            value["pal_python"] = "venv/bin/python"
+            config_path = root / "models.json"
+            config_path.write_text(json.dumps(value))
+            config = load_config(config_path)
+            self.assertEqual(Path(config["pal_python"]), executable)
+            self.assertNotEqual(Path(config["pal_python"]), base)
+
     def test_default_paths_stay_in_repository_from_unrelated_cwd(self):
         with tempfile.TemporaryDirectory() as folder, contextlib.chdir(folder):
             config = load_config(ROOT / "references" / "models.json")
@@ -28,7 +48,7 @@ class PortableConfigTests(unittest.TestCase):
 
     def test_relative_custom_paths_and_rounds_snapshot_have_same_meaning(self):
         with tempfile.TemporaryDirectory() as folder:
-            root = Path(folder)
+            root = Path(folder).resolve()
             original = root / "configs" / "models.json"
             original.parent.mkdir()
             value = json.loads((ROOT / "references" / "models.json").read_text())
@@ -82,7 +102,7 @@ class PortableConfigTests(unittest.TestCase):
 class BootstrapTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.repo = Path(self.temp.name)
+        self.repo = Path(self.temp.name).resolve()
         (self.repo / "references").mkdir()
         for name in ("requirements-runtime.txt", "references/runtime-lock.txt"):
             (self.repo / name).write_bytes((ROOT / name).read_bytes())
