@@ -10,30 +10,30 @@ critique each other's evidence, and feeds the findings back to Codex for checked
 <table>
   <tr>
     <td align="center" width="20%">
-      <img src="docs/assets/logos/codex-color.svg" width="56" height="56" alt="Codex logo"><br>
+      <img src="docs/assets/logos/codex-color.svg" width="112" height="64" alt="Codex logo"><br>
       <strong>Codex</strong><br>
       <sub>Author · verify · improve</sub>
     </td>
     <td align="center" width="20%">
-      <img src="docs/assets/logos/gemini-color.svg" width="56" height="56" alt="Gemini logo"><br>
+      <img src="docs/assets/logos/gemini-color.svg" width="112" height="64" alt="Gemini logo"><br>
       <strong>Gemini</strong><br>
       <sub>3.8 Flash</sub><br>
       <sub>Independent review</sub>
     </td>
     <td align="center" width="20%">
-      <img src="docs/assets/logos/qwen-color.svg" width="56" height="56" alt="Qwen logo"><br>
+      <img src="docs/assets/logos/qwen-color.svg" width="112" height="64" alt="Qwen logo"><br>
       <strong>Qwen</strong><br>
       <sub>3.8 27B</sub><br>
       <sub>Independent review</sub>
     </td>
     <td align="center" width="20%">
-      <img src="docs/assets/logos/nvidia-color.svg" width="56" height="56" alt="NVIDIA logo for the Nemotron model family"><br>
+      <img src="docs/assets/logos/nvidia-color.svg" width="112" height="64" alt="NVIDIA logo for the Nemotron model family"><br>
       <strong>Nemotron</strong><br>
       <sub>NVIDIA · 3 Ultra</sub><br>
       <sub>Independent review</sub>
     </td>
     <td align="center" width="20%">
-      <img src="docs/assets/logos/cohere-color.svg" width="56" height="56" alt="Cohere logo for the North model family"><br>
+      <img src="docs/assets/logos/cohere-color.svg" width="112" height="64" alt="Cohere logo for the North model family"><br>
       <strong>Cohere</strong><br>
       <sub>North Mini Code</sub><br>
       <sub>Independent review</sub>
