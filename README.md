@@ -6,6 +6,38 @@
 
 [English](README.en.md) · [설치·운영](references/operation.md) · [구조](docs/ARCHITECTURE.md) · [검증](docs/VALIDATION.md) · [보안](SECURITY.md)
 
+<table>
+  <tr>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/codex-color.svg" width="56" height="56" alt="Codex 로고"><br>
+      <strong>Codex</strong><br>
+      <sub>작성 · 근거 확인 · 개선</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/gemini-color.svg" width="56" height="56" alt="Gemini 로고"><br>
+      <strong>Gemini</strong><br>
+      <sub>3.8 Flash · 독립 검토</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/qwen-color.svg" width="56" height="56" alt="Qwen 로고"><br>
+      <strong>Qwen</strong><br>
+      <sub>3.8 27B · 독립 검토</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/nvidia-color.svg" width="56" height="56" alt="NVIDIA 로고 — Nemotron 모델 계열"><br>
+      <strong>Nemotron</strong><br>
+      <sub>NVIDIA · 3 Ultra · 독립 검토</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/cohere-color.svg" width="56" height="56" alt="Cohere 로고 — North 모델 계열"><br>
+      <strong>Cohere</strong><br>
+      <sub>North Mini Code · 독립 검토</sub>
+    </td>
+  </tr>
+</table>
+
+[모델·제공사 로고 출처와 라이선스](docs/assets/logos/README.md)
+
 Codex가 작업을 만든 뒤 Gemini·Qwen·Nemotron·Cohere에 독립적인 검토를 요청합니다.
 필요하면 모델들이 서로의 근거를 한 번 더 검토합니다. 마지막에는 **Codex가 원본과
 테스트로 지적을 확인하고, 타당한 수정과 재검증까지 수행**합니다.
@@ -45,10 +77,10 @@ GitHub에서는 PNG를 읽고, HTML은 내려받아 브라우저에서 열 수 �
 
 | 모델 | 실제 호출 서비스 / 정확한 ID | 필요한 계정 |
 |---|---|---|
-| Gemini 3.8 Flash | Google API · `gemini-3.8-flash` | Google AI Studio Free 프로젝트 |
-| Qwen3.8 27B | Groq · `qwen/qwen3.8-27b` | Groq Free 조직 |
-| Nemotron 3 Ultra | OpenRouter · `nvidia/nemotron-3-ultra-550b-a55b:free` | OpenRouter |
-| Cohere North Mini Code | OpenRouter · `cohere/north-mini-code:free` | 위와 같은 OpenRouter 계정·키 |
+| <img src="docs/assets/logos/gemini-color.svg" width="24" height="24" alt="Gemini"> **Gemini 3.8 Flash** | Google API · `gemini-3.8-flash` | Google AI Studio Free 프로젝트 |
+| <img src="docs/assets/logos/qwen-color.svg" width="24" height="24" alt="Qwen"> **Qwen3.8 27B** | Groq · `qwen/qwen3.8-27b` | Groq Free 조직 |
+| <img src="docs/assets/logos/nvidia-color.svg" width="24" height="24" alt="NVIDIA"> **Nemotron 3 Ultra** | OpenRouter · `nvidia/nemotron-3-ultra-550b-a55b:free` | OpenRouter |
+| <img src="docs/assets/logos/cohere-color.svg" width="24" height="24" alt="Cohere"> **Cohere North Mini Code** | OpenRouter · `cohere/north-mini-code:free` | 위와 같은 OpenRouter 계정·키 |
 
 **무료는 무제한을 뜻하지 않습니다.** 계정·지역·용량·제공사 정책에 따라 접근과 한도가
 달라집니다. Google/Groq는 유료 결제를 연결하지 않은 Free 플랜인지 직접 확인해야 합니다.

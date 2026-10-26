@@ -7,6 +7,38 @@ critique each other's evidence, and feeds the findings back to Codex for checked
 
 [한국어](README.md) · [Operations](references/operation.md) · [Architecture](docs/ARCHITECTURE.md) · [Security](SECURITY.md)
 
+<table>
+  <tr>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/codex-color.svg" width="56" height="56" alt="Codex logo"><br>
+      <strong>Codex</strong><br>
+      <sub>Author · verify · improve</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/gemini-color.svg" width="56" height="56" alt="Gemini logo"><br>
+      <strong>Gemini</strong><br>
+      <sub>3.8 Flash · reviewer</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/qwen-color.svg" width="56" height="56" alt="Qwen logo"><br>
+      <strong>Qwen</strong><br>
+      <sub>3.8 27B · reviewer</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/nvidia-color.svg" width="56" height="56" alt="NVIDIA logo for the Nemotron model family"><br>
+      <strong>Nemotron</strong><br>
+      <sub>NVIDIA · 3 Ultra · reviewer</sub>
+    </td>
+    <td align="center" width="20%">
+      <img src="docs/assets/logos/cohere-color.svg" width="56" height="56" alt="Cohere logo for the North model family"><br>
+      <strong>Cohere</strong><br>
+      <sub>North Mini Code · reviewer</sub>
+    </td>
+  </tr>
+</table>
+
+[Model and provider logo sources and license](docs/assets/logos/README.md)
+
 Codex authors the work. External models advise. The current Codex task checks each
 finding against the source or tests, adopts or rejects it with evidence, makes
 supported changes, and validates the result. Model agreement does not prove
@@ -41,12 +73,12 @@ There are no automatic retries, paid substitutions or provider fallbacks.
 
 The free profile currently configures these exact routes:
 
-| Service | Model ID |
-|---|---|
-| Google Free Tier | `gemini-3.8-flash` |
-| Groq Free Plan | `qwen/qwen3.8-27b` |
-| OpenRouter | `nvidia/nemotron-3-ultra-550b-a55b:free` |
-| OpenRouter | `cohere/north-mini-code:free` |
+| Model | Service | Model ID |
+|---|---|---|
+| <img src="docs/assets/logos/gemini-color.svg" width="24" height="24" alt="Gemini"> **Gemini 3.8 Flash** | Google Free Tier | `gemini-3.8-flash` |
+| <img src="docs/assets/logos/qwen-color.svg" width="24" height="24" alt="Qwen"> **Qwen3.8 27B** | Groq Free Plan | `qwen/qwen3.8-27b` |
+| <img src="docs/assets/logos/nvidia-color.svg" width="24" height="24" alt="NVIDIA"> **Nemotron 3 Ultra** | OpenRouter | `nvidia/nemotron-3-ultra-550b-a55b:free` |
+| <img src="docs/assets/logos/cohere-color.svg" width="24" height="24" alt="Cohere"> **Cohere North Mini Code** | OpenRouter | `cohere/north-mini-code:free` |
 
 Free access is conditional, limited and subject to change. Google/Groq require an
 unbilled Free account/project confirmation. OpenRouter requires the exact `:free`
