@@ -1,5 +1,7 @@
 # PAL Review Skill
 
+[![Offline regression tests](https://github.com/Kimhyuntae9665/pal-review-skill/actions/workflows/tests.yml/badge.svg)](https://github.com/Kimhyuntae9665/pal-review-skill/actions/workflows/tests.yml)
+
 **A Codex skill that asks other model families to review an artifact, optionally
 critique each other's evidence, and feeds the findings back to Codex for checked improvements.**
 
@@ -135,8 +137,10 @@ credential round trips on Windows, and boundary/identity/retry checks. They do
 not measure reviewer accuracy. See [validation](docs/VALIDATION.md) and
 [contributing](CONTRIBUTING.md). CI has no model keys and performs no live inference.
 
-The 2026-10-26 clean Windows runtime passed 90 tests and seven local numerical
-example checks. This is distinct from live model access or reviewer accuracy.
+On 2026-10-26, GitHub CI passed all 91 tests on Windows and 90 on Linux with one
+Windows-only DPAPI check skipped. Seven local numerical example checks also
+passed. This is distinct from live model access or reviewer accuracy.
+[Actual CI run](https://github.com/Kimhyuntae9665/pal-review-skill/actions/runs/40264813206)
 
 This independent integration uses [PAL MCP Server](https://github.com/BeehiveInnovations/pal-mcp-server),
 pinned to `7afc7c1cc96e23992c8f105f960132c657883bb1`. It does not vendor or claim

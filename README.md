@@ -1,5 +1,7 @@
 # PAL Review Skill
 
+[![Offline regression tests](https://github.com/Kimhyuntae9665/pal-review-skill/actions/workflows/tests.yml/badge.svg)](https://github.com/Kimhyuntae9665/pal-review-skill/actions/workflows/tests.yml)
+
 **Codex가 만든 코드·문서·계획을 다른 모델로 검토하고, 확인된 의견으로 개선하는 Codex 스킬입니다.**
 
 [English](README.en.md) · [설치·운영](references/operation.md) · [구조](docs/ARCHITECTURE.md) · [검증](docs/VALIDATION.md) · [보안](SECURITY.md)
@@ -187,7 +189,8 @@ Codex는 지적을 직접 재현하고 분자에 수량을 곱하며 0 수량 �
 테스트는 가짜 HTTP 응답과 가상 입력을 사용합니다. 실제 PAL MCP·제공사 어댑터·SDK를 거치는
 시험도 포함하지만 **외부 모델의 실제 추론이나 검수 성능 시험과는 구분**합니다.
 CI에 API 키가 필요하지 않습니다. 자세한 실행 결과와 재현 방법은 [검증 기록](docs/VALIDATION.md)을 보세요.
-2026-10-26 공개본의 새 Windows 환경에서 **테스트 90개와 예제 계산 7개**를 확인했습니다.
+2026-10-26 GitHub에서 **Windows 91개 통과, Linux 90개 통과·Windows 전용 1개 생략**을
+확인했습니다. 예제 계산 7개도 로컬에서 통과했습니다. [실제 CI 기록](https://github.com/Kimhyuntae9665/pal-review-skill/actions/runs/40264813206)
 
 이 프로젝트는 [PAL MCP Server](https://github.com/BeehiveInnovations/pal-mcp-server)의
 실제 MCP 실행 경로를 사용하는 별도의 Codex 스킬·연결 코드입니다. PAL을 직접 만든 프로젝트로

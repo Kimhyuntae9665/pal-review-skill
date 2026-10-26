@@ -10,7 +10,9 @@ screenshots of account consoles are published here.
 |---|---|
 | Clean Windows runtime install | Passed from the official pinned PAL source |
 | Managed runtime read-only check | `runtime_ready: true`, no inference |
-| Unit / actual-PAL mocked-HTTP suite | 90 tests passed, no skips reported |
+| Local unit / actual-PAL mocked-HTTP suite | 91 discovered: 90 passed, one executable-symlink permission check skipped |
+| GitHub Windows CI | All 91 tests passed |
+| GitHub Ubuntu CI | 90 passed, one Windows-only DPAPI check skipped |
 | Corrected synthetic example | Seven numerical checks passed |
 | Diagram artifact gates | Validate, deliver, strict check and browser-check passed |
 | Diagram visual inspection | Two Korean PNGs plus light/dark HTML views inspected |
@@ -20,6 +22,12 @@ The check used Python 3.11 and PAL 9.8.2 / MCP SDK 1.30.0. Provider keys were no
 connected to this clean runtime for release verification. `doctor` correctly
 reported missing auth while all local runtime prerequisites were available.
 This publication task made no model inference requests.
+
+The CI evidence is [run 40264813206](https://github.com/Kimhyuntae9665/pal-review-skill/actions/runs/40264813206)
+for source revision `2fca9d9647138472d3809d3305e09f9bfb3d3310`. Initial CI exposed
+Windows short-path comparison assumptions and Linux virtual-environment Python
+symlink resolution; both were corrected before this passing run. Documentation
+updates after that revision do not change the tested runtime code.
 
 ## Reproduce locally
 
