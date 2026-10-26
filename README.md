@@ -16,22 +16,26 @@
     <td align="center" width="20%">
       <img src="docs/assets/logos/gemini-color.svg" width="56" height="56" alt="Gemini 로고"><br>
       <strong>Gemini</strong><br>
-      <sub>3.8 Flash · 독립 검토</sub>
+      <sub>3.8 Flash</sub><br>
+      <sub>독립 검토</sub>
     </td>
     <td align="center" width="20%">
       <img src="docs/assets/logos/qwen-color.svg" width="56" height="56" alt="Qwen 로고"><br>
       <strong>Qwen</strong><br>
-      <sub>3.8 27B · 독립 검토</sub>
+      <sub>3.8 27B</sub><br>
+      <sub>독립 검토</sub>
     </td>
     <td align="center" width="20%">
       <img src="docs/assets/logos/nvidia-color.svg" width="56" height="56" alt="NVIDIA 로고 — Nemotron 모델 계열"><br>
       <strong>Nemotron</strong><br>
-      <sub>NVIDIA · 3 Ultra · 독립 검토</sub>
+      <sub>NVIDIA · 3 Ultra</sub><br>
+      <sub>독립 검토</sub>
     </td>
     <td align="center" width="20%">
       <img src="docs/assets/logos/cohere-color.svg" width="56" height="56" alt="Cohere 로고 — North 모델 계열"><br>
       <strong>Cohere</strong><br>
-      <sub>North Mini Code · 독립 검토</sub>
+      <sub>North Mini Code</sub><br>
+      <sub>독립 검토</sub>
     </td>
   </tr>
 </table>
